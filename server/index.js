@@ -4,9 +4,9 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
 const PORT = process.env.PORT;
-const knex = require("knex");
-const knexConnection = require("./config/knexConnection");
-const db = knex(knexConnection.development);
+// const knex = require("knex");
+// const knexConnection = require("./config/knexConnection");
+// const db = knex(knexConnection.development);
 
 //importing all routes
 const usersRoute = require("./routes/usersRoute");
