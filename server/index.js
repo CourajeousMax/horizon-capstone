@@ -19,6 +19,9 @@ app.get("/", (req, res) => {
   res.send("Welcome to Stephany server...");
 });
 
-app.listen(PORT, () => {
+app.use("/", (req,res) => {
+  res.send('Hello World');
+})
+app.listen(PORT || 8001, () => {
   console.log(`Running on port ${PORT}`);
 });
