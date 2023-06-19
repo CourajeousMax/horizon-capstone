@@ -1,12 +1,23 @@
-const express = require("express");
-const app = express();
+const express = require("express"); // requiring the express packge
+const app = express(); // initializing the express instance
 const cors = require("cors");
-require("dotenv").config();
-const { PORT } = process.env;
-const db = require("mysql");
+const dotenv = require("dotenv");
+dotenv.config();
+const PORT = process.env.PORT;
+const knex = require("knex");
+const knexConnection = require("./config/knexConnection");
+const db = knex(knexConnection.development);
+
+//importing all routes
+const usersRoute = require("./routes/usersRoute");
 
 app.use(express.json());
 app.use(cors());
+app.use("/api", usersRoute);
+
+app.get("/", (req, res) => {
+  res.send("Welcome to Stephany server...");
+});
 
 app.use("/", (req,res) => {
   res.send('Hello World');
