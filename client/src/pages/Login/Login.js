@@ -1,11 +1,12 @@
 import React from "react";
+// import { useState } from "react";
+// import { Link, NavLink, Navigate } from "react-router-dom";
 import GifEmbed from "../../Components/GifEmbed/GifEmbed";
 import Header from "../../Components/Header/Header";
 import FormInput from "../../Components/FormInput/FormInput";
-import "./SignUp.scss";
-const SignUp = () => {
+const Login = () => {
   return (
-    <>
+    <div>
       <Header />
       <section className="cover">
         <div className="hero__flex">
@@ -22,16 +23,18 @@ const SignUp = () => {
         </div>
         <div className="signup">
           <form className="signup__form">
-            <h2 className="signup__page-header">New user? Create an account!</h2>
+            <h2 className="signup__page-header">Welcome Back!</h2>
             <FormInput label="Username:" name="username" type="text" />
             <FormInput label="Email:" name="email" type="email" />
             <FormInput label="Password:" name="password" type="password" />
-          <button>Register</button>
+            <button >
+                Continue
+            </button>
           </form>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
-export default SignUp;
+export default Login;
