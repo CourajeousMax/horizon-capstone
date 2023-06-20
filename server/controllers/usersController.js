@@ -9,7 +9,6 @@ const registerUser = async (req, res) => {
         email,
       })
       .select("email");
-
     //Check if user exists
     if (userExist[0]) {
       return res.status(400).send("Email is already associated with an account");
@@ -26,7 +25,6 @@ const registerUser = async (req, res) => {
     res.status(500).send("error in registering user");
   }
 };
-
 module.exports = {
   registerUser,
 };
