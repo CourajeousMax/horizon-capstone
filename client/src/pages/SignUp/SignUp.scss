@@ -6,7 +6,7 @@
 .cover {
   background-image: url(../../assets/images/land.jpg);
   min-width: 100%;
-  min-height: 75vh;
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   opacity: 95%;
@@ -31,15 +31,4 @@
     border-radius: 50%;
     width: 6rem;
   }
-}
-
-.hero{
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    @include tablet {
-        &__flex{
-            display: flex
-        }
-    }
 }

@@ -10,13 +10,6 @@ const Login = () => {
       <Header />
       <section className="cover">
         <div className="hero__flex">
-          <section className="hero">
-            <article className="title">
-              <h3 className="title__header">Hi! Welcome to Chirp!</h3>
-              <h2 className="title__subheader">Meet your new companion, grow together on the journey to self-fulfillment</h2>
-              <h2 className="title__subheader">Ready to start your journey?</h2>
-            </article>
-          </section>
           <div className="hero__img">
             <GifEmbed />
           </div>

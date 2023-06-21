@@ -1,0 +1,33 @@
+@use "./mixins" as *;
+
+.page-header {
+    @include font (2.5rem, 600);
+}
+
+.subheader {
+    @include font (1.75rem, 700);
+}
+
+.body-large {
+    @include font (1.75rem, 400);
+}
+
+.body-medium {
+    @include font (1.5rem, 400);
+}
+
+.body-small {
+    @include font (1rem, 400);
+}
+
+.foot-notes {
+    @include font (0.5625rem, 400);
+}
+
+.table-header {
+    @include font (1.125rem, 700);
+}
+
+.table-body {
+    @include font (1rem, 400);
+}
