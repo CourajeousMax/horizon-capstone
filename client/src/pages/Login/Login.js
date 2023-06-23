@@ -11,7 +11,6 @@ const Login = () => {
       <section className="cover">
         <div className="hero__flex">
           <div className="hero__img">
-            <GifEmbed />
           </div>
         </div>
         <div className="signup">
