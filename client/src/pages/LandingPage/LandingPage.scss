@@ -1,0 +1,159 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+main {
+  padding: 2.5rem;
+  width: 100%;
+  background-image: url(../../assets/images/gre.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.hero {
+  &__container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5rem;
+    }
+  }
+  &__img {
+    height: 40%;
+    width: 30%;
+  }
+}
+.title {
+  background-image: url(../../assets/images/camp.jpg);
+  width: 80vw;
+  border-radius: 2.0156rem;
+  padding: 1.5rem;
+  box-shadow: $box-shadow;
+  @include tablet {
+    width: 80vw;
+    height: 30vh;
+  }
+
+  &__subheader {
+    padding: 0.5rem;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__egg-img {
+    width: 35%;
+    height: 30%;
+  }
+  &__two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-image: url(../../assets/images/wood_texture.jpg);
+    width: 50%;
+    height: 50%;
+    filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.15));
+    border-radius: 2.0156rem;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+.landing {
+  background-image: url(../../assets/images/pixels.jpg);
+  background-position: center;
+  opacity: 95%;
+  position: relative;
+  width: 100%;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem;
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  }
+
+.objective {
+  padding: 2rem;
+  position: relative;
+  background-image: url(../..//assets/images/mushrooms.jpg);
+  box-shadow: $box-shadow;
+  border-radius: 20px;
+  @include tablet {
+    height: 30vh;
+  }
+  &__flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet {
+      gap: 2rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  &__subheader {
+    padding: 0.5rem;
+  }
+  @include tablet {
+    width: 80vw;
+    height: 30vh;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 1rem;
+  }
+  &__egg-img {
+    width: 35%;
+    height: 30%;
+  }
+  &__two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-image: url(../../assets/images/wood_texture.jpg);
+    width: 25vw;
+    border-radius: 2.0156rem;
+    filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.15));
+    @include tablet {
+      height: 30vh;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+.tree {
+  &__circle {
+    height: 100%;
+    width: 100%;
+    border-radius: 80%;
+    background-color: red;
+  }
+  &__flex {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    @include tablet{
+      column-gap: 10rem;
+    }
+  }
+}

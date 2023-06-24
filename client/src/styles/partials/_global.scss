@@ -5,4 +5,134 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Signika';
+}
+
+.vp-slide {
+    opacity: 0
+}
+
+.vp--onf-30 .vp-slide {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.vp--onf-30 .vp-slide--lazy {
+    transition-duration: 0.7s
+}
+
+.vp-pop {
+    opacity: 0;
+    transform: scale(0.5)
+}
+
+.vp--onf-30 .vp-pop {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 0.4s var(--cubic-bezier-in),opacity 0.4s var(--cubic-bezier-in)
+}
+
+.vp--onf-30 .vp-pop--lazy {
+    transition: transform 0.4s var(--timing-lazy),opacity 0.4s var(--timing-lazy)
+}
+
+.vp-slide--right {
+    transform: translateX(-50%)
+}
+
+.vp-slide--left {
+    transform: translateX(50%)
+}
+
+.vp-slide--down {
+    transform: translateY(-50%)
+}
+
+.vp-slide--up {
+    transform: translateY(50%);
+}
+
+.vp-slide--up-min {
+    transform: translateY(30px)
+}
+
+.vp--onf-30 .vp-delay-1 {
+    transition-delay: .1s
+}
+
+.vp--onf-30 .vp-delay-2 {
+    transition-delay: .2s;
+}
+
+.vp--onf-30 .vp-delay-3 {
+    transition-delay: .3s
+}
+
+.vp--onf-30 .vp-delay-4 {
+    transition-delay: .4s
+}
+
+.vp--onf-30 .vp-delay-5 {
+    transition-delay: .5s
+}
+
+.vp--onf-30 .vp-delay-6 {
+    transition-delay: .6s
+}
+
+.vp--onf-30 .vp-delay-7 {
+    transition-delay: .7s
+}
+
+.vp--onf-30 .vp-delay-8 {
+    transition-delay: .8s
+}
+
+.vp--onf-30 .vp-delay-9 {
+    transition-delay: .9s
+}
+
+.vp--onf-30 .vp-delay-10 {
+    transition-delay: 1s
+}
+
+.vp--onf-30 .vp-delay-11 {
+    transition-delay: 1.1s
+}
+
+.vp--onf-30 .vp-delay-12 {
+    transition-delay: 1.2s
+}
+
+.vp--onf-30 .vp-delay-13 {
+    transition-delay: 1.3s
+}
+
+.vp--onf-30 .vp-delay-14 {
+    transition-delay: 1.4s
+}
+
+.vp--onf-30 .vp-delay-15 {
+    transition-delay: 1.5s
+}
+
+.vp--onf-30 .vp-delay-16 {
+    transition-delay: 1.6s
+}
+
+.vp--onf-30 .vp-delay-17 {
+    transition-delay: 1.7s
+}
+
+.vp--onf-30 .vp-delay-18 {
+    transition-delay: 1.8s
+}
+
+.vp--onf-30 .vp-delay-19 {
+    transition-delay: 1.9s
+}
+
+.vp--onf-30 .vp-delay-20 {
+    transition-delay: 2s
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 const GifEmbed = () => {
     return (
-      <div>
+      <div className="gif">
         <iframe
           src="https://giphy.com/embed/iDlYEjLcjo1B2bq7wW"
           width="100%"

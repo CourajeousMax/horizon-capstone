@@ -1,13 +1,11 @@
 import React from "react";
 import "./FormInput.scss";
-const FormInput = () => {
+const FormInput = ({ label, name, type }) => {
   return (
     <div>
       <div className="input__box">
-        <label className="input__label">
-            user
-        </label>
-        <input className="input__input"  />
+        <label className="input__label">{label}</label>
+        <input type={type} name={name} placeholder={label} className="input__input" />
       </div>
     </div>
   );
