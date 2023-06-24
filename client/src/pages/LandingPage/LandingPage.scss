@@ -10,6 +10,28 @@ main {
   background-position: center;
 }
 .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-image: url(../../assets/images/pattern-leaves-turquoise.jpg);
+  background-position: cover;
+  box-shadow: $box-shadow;
+  border-radius: 1.25rem;
+  margin-bottom: 2rem;
+  &__header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $yellow;
+    box-shadow: $box-shadow;
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1.2rem solid $peach;
+    width: 40%;
+    height: 5vh;
+  }
   &__container {
     padding: 2rem;
     display: flex;
@@ -33,9 +55,18 @@ main {
   border-radius: 2.0156rem;
   padding: 1.5rem;
   box-shadow: $box-shadow;
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 0.4s, opacity 0.4s;
+  transition-delay: 0.2s;
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+  }
+
   @include tablet {
     width: 80vw;
-    height: 30vh;
+    // height: 15vh;
   }
 
   &__subheader {
@@ -45,10 +76,35 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 1.25rem;
+    background-color: $peach;
+    &-two{
+      display: flex;
+      flex-direction: column;
+      gap:1rem
+    }
   }
   &__egg-img {
     width: 35%;
     height: 30%;
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 0.4s, opacity 0.4s;
+    transition-delay: 0.5s;
+    &:hover {
+      transform: scale(1);
+    }
+  }
+  &__grass-img {
+    position: absolute;
+    left: 2rem;
+    bottom: -1rem;
+    width: 35%;
+    height: 30%;
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 0.4s, opacity 0.4s;
+    transition-delay: 0.5s;
   }
   &__two {
     display: flex;
@@ -58,7 +114,7 @@ main {
     background-image: url(../../assets/images/wood_texture.jpg);
     width: 50%;
     height: 50%;
-    filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.15));
+    filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.15));
     border-radius: 2.0156rem;
     @include tablet {
       display: flex;
@@ -66,25 +122,29 @@ main {
     }
   }
 }
-
+.enter-transition {
+  transform: scale(0.8);
+  opacity: 0;
+  transition-delay: 0s;
+}
 .landing {
-  background-image: url(../../assets/images/pixels.jpg);
+  background-image: url(../../assets/images/beige.jpg);
   background-position: center;
+  border-radius: 1.25rem;
   opacity: 95%;
   position: relative;
   width: 100%;
+  box-shadow: $box-shadow;
   &__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex(center, center, column);
     padding: 2.5rem;
     @include tablet {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
     }
   }
-  }
+}
 
 .objective {
   padding: 2rem;
@@ -110,7 +170,6 @@ main {
     padding: 0.5rem;
   }
   @include tablet {
-    width: 80vw;
     height: 30vh;
   }
   &__container {
@@ -133,7 +192,7 @@ main {
     background-image: url(../../assets/images/wood_texture.jpg);
     width: 25vw;
     border-radius: 2.0156rem;
-    filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.15));
+    filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.15));
     @include tablet {
       height: 30vh;
       display: flex;
@@ -142,18 +201,29 @@ main {
   }
 }
 .tree {
-  &__circle {
-    height: 100%;
-    width: 100%;
-    border-radius: 80%;
-    background-color: red;
-  }
   &__flex {
     display: flex;
     align-items: center;
-    flex-direction: row-reverse;
-    @include tablet{
-      column-gap: 10rem;
+    justify-content: space-between;
+    height: 40vh;
+  }
+  &__circle {
+    height: 100%;
+    border-radius: 80%;
+    background-color: $peach;
+    margin-left: 2rem;
+    margin-top: -2rem;
+    &-img {
+      margin-left: 3rem;
+      height: 70%;
+      width: 70%;
+    }
+    &-container {
+      background-image: url(../../assets/images/brown.png);
+      box-shadow: $box-shadow;
+      border-radius: 80%;
+      height: 21vh;
+      width: 12vw;
     }
   }
 }

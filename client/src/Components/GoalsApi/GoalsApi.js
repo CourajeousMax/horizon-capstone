@@ -55,12 +55,12 @@ const GoalsApi = ({ isButtonClicked, handleOnClick, seedlingColor }) => {
           </div>
         ))}
       {completedGoals.length > 0 && (
-        <div className="goals__data-card">
+        <div className="goals__data-completed">
           <div className="goal__completed">
             <p className="goals__copy body-small">Goals Completed</p>
           </div>
           {completedGoals.map((goal) => (
-            <div className="goals__data-card" key={goal.id}>
+            <div className="goals__data-card--completed" key={goal.id}>
               <h3>{goal.title}</h3>
               <p>{goal.description}</p>
               <h3>completed on: {new Date(goal.completion_date).toLocaleDateString()}</h3>

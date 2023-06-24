@@ -1,6 +1,5 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
-
 .home {
   padding: 2rem 1.5rem;
   @include flex(center, center, column);
@@ -34,12 +33,13 @@
     gap: 2rem;
     @include tablet {
       width: 100%;
-      gap: 6rem;
+      gap: 1rem;
     }
   }
   &__data-card {
+    @include flex(center, center, column);
     box-shadow: $box-shadow;
-    background-color: #A4bde2;
+    background-color: $white;
     border-radius: 20px;
     height: 10vh;
     padding: 1rem;
@@ -48,11 +48,35 @@
       width: 90%;
       height: 10vh;
     }
+    &--container {
+      @include flex(center, center, column);
+      gap: 1rem;
+      background-image: url(../../assets/images/download.jpg);
+      background-color: $white;
+      border-radius: 20px;
+      padding: 2rem;
+    }
+  }
+  &__card-container {
+    background-color: $white;
+    border-radius: 20px;
+    background-image: url(../../assets/images/pattern-stripes.jpg);
+    padding: 2rem;
   }
 }
 .goals {
+  &__data-completed {
+    padding-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 1rem;
+    align-items: center;
+    border-radius: 1.5625rem;
+  }
   &__data-button {
-    @include flex(center,center,row);
+    @include flex(center, center, row);
     border-radius: 20px;
     width: 40%;
   }
@@ -61,9 +85,19 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding: 1rem;
     align-items: center;
     border-radius: 1.5625rem;
     background-image: url(../../assets/images/green.jpg);
+    &-completed {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      border-radius: 1.5625rem;
+      background-image: url(../../assets/images/green.jpg);
+    }
   }
   &__data-card {
     background-color: white;
@@ -78,6 +112,17 @@
     height: 10vh;
     @include tablet {
       padding: 1rem;
+      width: 60%;
+    }
+    &--completed {
+      background-color: white;
+      filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.15));
+      box-shadow: $box-shadow;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
       width: 90%;
     }
   }
@@ -85,7 +130,7 @@
 .card {
   background-color: #d2d2d2;
   height: 90%;
-  width: 100%;
+  width: 15vw;
   &__one {
     width: 40%;
     @include tablet {
@@ -114,13 +159,12 @@
   &__container {
     @include flex(row, center, flex-start);
     justify-content: space-between;
-
   }
 }
 
 .fa-solid:hover {
   cursor: pointer;
   transform: scale(1.2);
-  color: #E7D539;
-  background-color: #A4bde2;
+  color: #e7d539;
+  background-color: $white;
 }

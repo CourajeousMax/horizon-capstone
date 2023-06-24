@@ -5,6 +5,8 @@ import AvatarContainer from "../../Components/AvatarContainer/AvatarContainer";
 import WeatherApi from "../../Components/WeatherApi/WeatherApi";
 import GoalsApi from "../../Components/GoalsApi/GoalsApi";
 import AffirmationsApi from "../../Components/AffirmationsApi/AffirmationsApi";
+import SpotifyWidget from "../../Components/SpotifyWidget/SpotifyWidget";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Home.scss";
 import "../SignUp/SignUp.scss";
 
@@ -16,6 +18,7 @@ const Home = () => {
      setIsButtonClicked((isButtonClicked) => isButtonClicked + 1);
      setSeedlingColor(seedlingColor + 1);
    };
+    const emoticons = ["fa-face-sad-cry", "fa-face-frown", "fa-face-meh", "fa-face-smile", "fa-face-laugh-beam"];
   return (
     <>
       <NavBar />
@@ -25,17 +28,15 @@ const Home = () => {
             <h1 className="home__title page-header">Welcome h o m e, user</h1>
           </div>
           <section className="home">
-            <AvatarContainer isButtonClicked={isButtonClicked}/>
-            <div className="goals__data-container">
+            <AvatarContainer isButtonClicked={isButtonClicked} />
+            <div className="goals__data-container ">
               <div className="goals__number-container">
                 <h2 className="goals__number">Goals</h2>
               </div>
-              <GoalsApi 
-              isButtonClicked={isButtonClicked} 
-              handleOnClick={handleOnClick}
-              seedlingColor={seedlingColor} />
+              <GoalsApi isButtonClicked={isButtonClicked} handleOnClick={handleOnClick} seedlingColor={seedlingColor} />
             </div>
             <div className="home__data-container">
+              <div className="home__data-card--container">
               <AffirmationsApi />
               <div className="home__data-card">
                 <WeatherApi />
@@ -52,6 +53,8 @@ const Home = () => {
                   </div>
                 </div>
               </div>
+              </div>
+              <SpotifyWidget />
             </div>
           </section>
         </div>
