@@ -4,24 +4,20 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
 const PORT = process.env.PORT;
-// const knex = require("knex");
-// const knexConnection = require("./config/knexConnection");
-// const db = knex(knexConnection.development);
 
 //importing all routes
 const usersRoute = require("./routes/usersRoute");
-
+const goalsRoute = require("./routes/goalsRoute");
+const affirmationsRoute = require("./routes/affirmationsRoute");
 app.use(express.json());
 app.use(cors());
-app.use("/api", usersRoute);
-
+app.use("/api", usersRoute, goalsRoute);
+app.use("/", affirmationsRoute)
 app.get("/", (req, res) => {
-  res.send("Welcome to Stephany server...");
+  res.send("Welcome to Max server...");
 });
 
-app.use("/", (req,res) => {
-  res.send('Hello World');
-})
+
 app.listen(PORT || 8001, () => {
   console.log(`Running on port ${PORT}`);
 });
