@@ -1,7 +1,4 @@
 import React from "react";
-// import { useState } from "react";
-// import { Link, NavLink, Navigate } from "react-router-dom";
-import GifEmbed from "../../Components/GifEmbed/GifEmbed";
 import Header from "../../Components/Header/Header";
 import FormInput from "../../Components/FormInput/FormInput";
 const Login = () => {

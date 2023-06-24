@@ -1,5 +1,10 @@
 @use "./mixins" as *;
 
+@font-face {
+  font-family: 'Signika';
+  font-weight: 400;
+  src: url(../../assets/fonts/Signika-Regular.ttf);
+}
 .page-header {
     @include font (2.5rem, 600);
 }

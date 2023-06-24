@@ -4,7 +4,7 @@
 main {
   padding: 2.5rem;
   width: 100%;
-  background-image: url(../../assets/images/land.jpg);
+  background-image: url(../../assets/images/gre.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -30,15 +30,16 @@ main {
 .title {
   background-image: url(../../assets/images/camp.jpg);
   width: 80vw;
-  height: 26vh;
   border-radius: 2.0156rem;
   padding: 1.5rem;
-  &__subheader {
-    padding: 0.5rem;
-  }
+  box-shadow: $box-shadow;
   @include tablet {
     width: 80vw;
     height: 30vh;
+  }
+
+  &__subheader {
+    padding: 0.5rem;
   }
   &__container {
     display: flex;
@@ -57,6 +58,7 @@ main {
     background-image: url(../../assets/images/wood_texture.jpg);
     width: 50%;
     height: 50%;
+    filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.15));
     border-radius: 2.0156rem;
     @include tablet {
       display: flex;
@@ -67,7 +69,6 @@ main {
 
 .landing {
   background-image: url(../../assets/images/pixels.jpg);
-  background-size: cover;
   background-position: center;
   opacity: 95%;
   position: relative;
@@ -83,18 +84,14 @@ main {
       align-items: flex-start;
     }
   }
-
-  &__img {
-    @include tablet {
-      position: absolute;
-      right: -1.5rem;
-      top: -9rem;
-    }
   }
-}
+
 .objective {
   padding: 2rem;
   position: relative;
+  background-image: url(../..//assets/images/mushrooms.jpg);
+  box-shadow: $box-shadow;
+  border-radius: 20px;
   @include tablet {
     height: 30vh;
   }
@@ -109,11 +106,6 @@ main {
       align-items: center;
     }
   }
-  &__container {
-    width: 100%;
-    height: 100%;
-  }
-
   &__subheader {
     padding: 0.5rem;
   }
@@ -125,6 +117,9 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 1rem;
   }
   &__egg-img {
     width: 35%;
@@ -137,11 +132,28 @@ main {
     padding: 2rem;
     background-image: url(../../assets/images/wood_texture.jpg);
     width: 25vw;
-    height: 30vh;
     border-radius: 2.0156rem;
+    filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.15));
     @include tablet {
+      height: 30vh;
       display: flex;
       flex-direction: row;
+    }
+  }
+}
+.tree {
+  &__circle {
+    height: 100%;
+    width: 100%;
+    border-radius: 80%;
+    background-color: red;
+  }
+  &__flex {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    @include tablet{
+      column-gap: 10rem;
     }
   }
 }

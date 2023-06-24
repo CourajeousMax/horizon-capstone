@@ -7,7 +7,7 @@ const WeatherApi = () => {
     const fetchWeather = async() => {
       try {
         const response = await fetch(
-          `https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&current_weather=true&temperature_unit=fahrenheit`
+          `https://api.open-meteo.com/v1/gfs?latitude=52.52&longitude=13.41&hourly=temperature_2m&current_weather=true&temperature_unit=fahrenheit&timezone=America%2FNew_York`
         );
         if (response.ok) {
           const jsonData = await response.json();
@@ -25,7 +25,7 @@ const WeatherApi = () => {
   return (
     <div>
       <div>
-        <h3>Current Time: {currentWeather.time}</h3>
+        <h3>Current Time: {new Date(currentWeather.time).toLocaleTimeString()} </h3>
         <h3>Current Temperature: {currentWeather.temperature}</h3>
         <h3>Current Windspeed: {currentWeather.windspeed}</h3>
       </div>

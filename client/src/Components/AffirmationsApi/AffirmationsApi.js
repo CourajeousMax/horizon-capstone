@@ -23,7 +23,7 @@ const AffirmationsApi = () => {
   }, []);
 
   return (
-    <div>
+    <div className="home__data-card">
       <h3>Affirmation:</h3>
       <p>{affirmation}</p>
     </div>

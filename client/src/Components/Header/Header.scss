@@ -25,11 +25,12 @@
   }
   &__list {
     margin-top: 1.5rem;
+    margin-left: 2rem;
     display: flex;
     justify-content: center;
-    align-content: center;
     background: #f1e26f;
     list-style-type: none;
+    width: 80%;
     @include tablet {
       margin-top: 0;
       border-top: 3px; 
@@ -40,6 +41,7 @@
       padding: 10px 13px;
       position: relative;
       z-index: 1;
+      width: 20%;
     }
     @include desktop {
       margin-top: 0;

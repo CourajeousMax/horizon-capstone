@@ -3,11 +3,9 @@
 
 .home {
   padding: 2rem 1.5rem;
-  @include flex(flex-start, center, column);
+  @include flex(center, center, column);
   gap: 4rem;
   width: 100%;
-  display: flex;
-  flex-direction: column;
   gap: 2rem;
   @include tablet {
     padding: 2rem 1.5rem;
@@ -19,6 +17,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    align-items: center;
   }
   &__title {
     @include flex(flex-start, center, column);
@@ -30,42 +29,56 @@
     }
   }
   &__data-container {
-    // @include flex(space-between);
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    @include tablet {
+      width: 100%;
+      gap: 6rem;
+    }
   }
   &__data-card {
-    // box-shadow: $box-shadow;
-    background-color: white;
+    box-shadow: $box-shadow;
+    background-color: #A4bde2;
+    border-radius: 20px;
+    height: 10vh;
+    padding: 1rem;
     @include tablet {
       padding: 1rem;
       width: 90%;
-      height: 20vh;
-      border-radius: 20px;
+      height: 10vh;
     }
   }
-  //   &__number {
-  //     // @include font(2rem, 600);
-  //   }
 }
 .goals {
+  &__data-button {
+    @include flex(center,center,row);
+    border-radius: 20px;
+    width: 40%;
+  }
   &__data-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    // @include flex(space-between);
+    align-items: center;
+    border-radius: 1.5625rem;
+    background-image: url(../../assets/images/green.jpg);
   }
   &__data-card {
     background-color: white;
-    // box-shadow: $box-shadow;
+    filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.15));
+    box-shadow: $box-shadow;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    width: 60%;
+    height: 10vh;
     @include tablet {
       padding: 1rem;
       width: 90%;
-      height: 20vh;
-      border-radius: 20px;
     }
   }
 }
@@ -79,16 +92,35 @@
       width: 100%;
     }
   }
-    &__two {
+  &__two {
     width: 40%;
     @include tablet {
       width: 100%;
     }
   }
-    &__three {
+  &__three {
     width: 40%;
     @include tablet {
       width: 100%;
     }
   }
+}
+
+.fa-solid {
+  transition: transform 0.3s;
+  &__container {
+    font-size: 2rem;
+  }
+  &__container {
+    @include flex(row, center, flex-start);
+    justify-content: space-between;
+
+  }
+}
+
+.fa-solid:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  color: #E7D539;
+  background-color: #A4bde2;
 }

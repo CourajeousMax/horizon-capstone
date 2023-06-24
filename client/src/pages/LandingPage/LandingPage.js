@@ -13,6 +13,7 @@ const LandingPage = () => {
         <section className="hero">
           <div className="hero__container">
             <img className="hero__img" src={Blathers} />
+            
             <article className="title">
               <div className="title__container">
                 <h3 className="title__header">Welcome!</h3>
@@ -27,7 +28,6 @@ const LandingPage = () => {
         </section>
         <section className="landing">
           <div className="landing__container">
-            <img className="landing__img landing__mobile" src={Tree} />
             <article className="title__two">
               <img className="title__egg-img" src={Egg} />
               <div className="title__container-two">
@@ -37,13 +37,30 @@ const LandingPage = () => {
               </div>
             </article>
           </div>
-          <section className="objective__one objective">
-            <div className="objective__flex">
+        </section>
+        <section className="tree">
+          <div className="tree__flex">
+            <div className="tree__circle-container">
+              <div className="tree__circle">hi</div>
+            </div>
+            <div className="tree__circle-container">
+              <div className="tree__circle">hi</div>
+            </div>
+            <div className="tree__circle-container">
+              <div className="tree__circle">hi</div>
+            </div>
+            <img className="tree__img" src={Tree} />
+          </div>
+        </section>
+        <section className="objective__one objective">
+          <div className="objective__flex">
             <div className="objective__container">
               <article className="objective__two">
                 <div className="objective__container-two">
                   <h3 className="objective__header-two">The sky is the Limit</h3>
-                  <h2 className="objective__subheader-two">Complete quick self-care exercises to level up your pet and improve your mental health! </h2>
+                  <h2 className="objective__subheader-two">
+                    Complete quick self-care exercises to level up your pet and improve your mental health!{" "}
+                  </h2>
                   <h2 className="objective__subheader-two"></h2>
                 </div>
               </article>
@@ -66,8 +83,7 @@ const LandingPage = () => {
                 </div>
               </article>
             </div>
-            </div>
-          </section>
+          </div>
         </section>
       </main>
     </>
