@@ -1,6 +1,12 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.journal__playlist {
-    width: 30%;
+.journal__container {
+    width: 100%;
+    &-avatar{
+        width:20%
+    }
+    &-spotify{
+        width:30%
+    }
 }

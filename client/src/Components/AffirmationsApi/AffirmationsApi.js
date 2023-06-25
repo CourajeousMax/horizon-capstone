@@ -24,7 +24,7 @@ const AffirmationsApi = () => {
 
   return (
     <div className="home__data-card">
-      <h3>Affirmation:</h3>
+      <h3>Daily Affirmation:</h3>
       <p>{affirmation}</p>
     </div>
   );
