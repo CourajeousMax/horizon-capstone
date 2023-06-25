@@ -73,17 +73,17 @@ const LandingPage = () => {
           <div className="tree__flex">
             <div className="tree__circle-container">
               <div className="tree__circle">
-                <img className={`tree__circle-img ${showTitle ? "" : "enter-transition"} `} src={Bird} />
+                <img className={`tree__circle-img circle-one ${showTitle ? "" : "enter-transition"} `} src={Bird} />
               </div>
             </div>
             <div className="tree__circle-container">
               <div className="tree__circle">
-                <img className={`tree__circle-img ${showTitle ? "" : "enter-transition"} `} src={FeatherPen} />
+                <img className={`tree__circle-img circle-two ${showTitle ? "" : "enter-transition"} `} src={FeatherPen} />
               </div>
             </div>
             <div className="tree__circle-container">
               <div className="tree__circle">
-                <img className={`tree__circle-img ${showTitle ? "" : "enter-transition"} `} src={Sprout} />
+                <img className={`tree__circle-img circle-three ${showTitle ? "" : "enter-transition"} `} src={Sprout} />
               </div>
             </div>
           </div>

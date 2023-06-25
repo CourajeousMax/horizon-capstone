@@ -78,10 +78,10 @@ main {
     align-items: center;
     border-radius: 1.25rem;
     background-color: $peach;
-    &-two{
+    &-two {
       display: flex;
       flex-direction: column;
-      gap:1rem
+      gap: 1rem;
     }
   }
   &__egg-img {
@@ -225,5 +225,22 @@ main {
       height: 21vh;
       width: 12vw;
     }
+  }
+}
+.circle {
+  &-one {
+    transform: scale(1);
+    transition: transform 0.4s, opacity 0.4s;
+    transition-delay: .3s;
+  }
+  &-two {
+    transform: scale(1);
+    transition: transform 0.4s, opacity 0.4s;
+    transition-delay: .5s;
+  }
+  &-three {
+    transform: scale(1);
+    transition: transform 0.4s, opacity 0.4s;
+    transition-delay: .7s;
   }
 }

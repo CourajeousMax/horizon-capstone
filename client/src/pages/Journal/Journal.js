@@ -1,17 +1,14 @@
 import React from 'react';
 import NavBar from '../../Components/NavBar/NavBar';
-import AvatarContainer from '../../Components/AvatarContainer/AvatarContainer';
-import SpotifyWidget from '../../Components/SpotifyWidget/SpotifyWidget';
+import JournalInput from '../../Components/JournalInput/JournalInput';
+
 import "../SignUp/SignUp.scss"
 import "../../pages/Journal/Journal.scss"
 const Journal = () => {
     return (
       <div>
         <NavBar />
-        <section className="cover">
-            <AvatarContainer />
-            <SpotifyWidget />
-          </section>
+        <JournalInput />
       </div>
     );
 };
