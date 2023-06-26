@@ -10,53 +10,56 @@ const GoalsApi = () => {
   return (
     <div className="goals__data-container">
       {goals &&
-        goals.map((goal) => (
-          <div className={`goals__data-card ${goal.goal_completed ? "completed" : ""}`} key={goal.id}>
-            <h3>{goal.title}</h3>
-            <p>{goal.description}</p>
-            <button className={`goals__data-button ${goal.goal_completed ? "clicked" : ""}`} onClick={() => handleGoalClick(goal.id)}>
-              {goal.goal_completed ? (
-                <>
-                  <p>Completed!</p>
-                  <FontAwesomeIcon
-                    key={goal.id}
-                    icon={faSeedling}
-                    className={`fa-sharp fa-solid fa-seedling ${goal.goal_completed ? "clicked" : ""}`}
-                    style={{
-                      color: "green",
-                    }}
-                  />
-                </>
-              ) : (
-                <>
-                  <p>Complete</p>
-                  <FontAwesomeIcon
-                    key={goal.id}
-                    icon={faSeedling}
-                    className={`fa-sharp fa-solid fa-seedling ${goal.goal_completed ? "clicked" : ""}`}
-                    style={{
-                      color: "black",
-                    }}
-                  />
-                </>
-              )}
-            </button>
-          </div>
-        ))}
-      {/* {completedGoals.length > 0 && (
-        <div className="goals__data-completed">
-          <div className="goal__completed">
-            <p className="goals__copy body-small">Goals Completed</p>
-          </div>
-          {completedGoals.map((goal) => (
-            <div className="goals__data-card--completed" key={goal.id}>
+        goals
+          .filter((goal) => !goal.goal_completed)
+          .map((goal) => (
+            <div className={`goals__data-card ${goal.goal_completed ? "completed" : ""}`} key={goal.id}>
               <h3>{goal.title}</h3>
               <p>{goal.description}</p>
-              <h3>completed on: {new Date(goal.completion_date).toLocaleDateString()}</h3>
+              <button className={`goals__data-button ${goal.goal_completed ? "clicked" : ""}`} onClick={() => handleGoalClick(goal.id)}>
+                {goal.goal_completed ? (
+                  <>
+                    <FontAwesomeIcon
+                      key={goal.id}
+                      icon={faSeedling}
+                      className={`fa-sharp fa-solid fa-seedling ${goal.goal_completed ? "clicked" : ""}`}
+                      style={{
+                        color: "green",
+                      }}
+                    />
+                  </>
+                ) : (
+                  <>
+                    <p>Complete</p>
+                    <FontAwesomeIcon
+                      key={goal.id}
+                      icon={faSeedling}
+                      className={`fa-sharp fa-solid fa-seedling ${goal.goal_completed ? "clicked" : ""}`}
+                      style={{
+                        color: "black",
+                      }}
+                    />
+                  </>
+                )}
+              </button>
             </div>
           ))}
+      {goals.length > 0 && (
+        <div className="goals__data-completed">
+          <div className="goal__completed">
+            <h2 className="goals__copy body-large">Goals Completed</h2>
+          </div>
+          {goals
+            .filter((goal) => goal.goal_completed)
+            .map((goal) => (
+              <div className="goals__data-card--completed" key={goal.id}>
+                <h3>{goal.title}</h3>
+                <p>{goal.description}</p>
+                <h3>completed on: {new Date(goal.completion_date).toLocaleDateString()}</h3>
+              </div>
+            ))}
         </div>
-      )} */}
+      )}
     </div>
   );
 };

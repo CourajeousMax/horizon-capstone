@@ -1,31 +1,82 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 import NavBar from "../../Components/NavBar/NavBar";
 import AvatarContainer from "../../Components/AvatarContainer/AvatarContainer";
 import WeatherApi from "../../Components/WeatherApi/WeatherApi";
 import GoalsApi from "../../Components/GoalsApi/GoalsApi";
 import AffirmationsApi from "../../Components/AffirmationsApi/AffirmationsApi";
 import SpotifyWidget from "../../Components/SpotifyWidget/SpotifyWidget";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Home.scss";
 import "../SignUp/SignUp.scss";
-import { useGoals } from "./use-goals";
 
 const Home = () => {
-  const { goals } = useGoals();
+    const [user, setUser] = useState(null);
+    const [failedAuth, setFailedAuth] = useState(false);
+  useEffect(() => {
+    const fetchData = async () => {
+      const token = sessionStorage.getItem("token");
+
+      if (!token) {
+        return setFailedAuth(true);
+      }
+
+      try {
+        const response = await axios.get("http://localhost:8000/api/current", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        setUser(response.data);
+      } catch (error) {
+        console.log(error);
+        setFailedAuth(true);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("token");
+    setUser(null);
+    setFailedAuth(true);
+  };
+
+  if (failedAuth) {
+    return (
+      <main className="dashboard">
+        <p>You must be logged in to see this page.</p>
+        <p>
+          <Link to="/login">Log in</Link>
+        </p>
+      </main>
+    );
+  }
+
+  if (user === null) {
+    return (
+      <main className="dashboard">
+        <p>Loading...</p>
+      </main>
+    );
+  }
+
   return (
     <>
-      <NavBar />
+      <NavBar  />
       <section className="cover">
         <div className="home__flex">
           <div className="home__title-container">
-            <h1 className="home__title page-header">Welcome h o m e, user</h1>
+            <h1 className="home__title page-header">Welcome h o m e, {user.username}</h1>
           </div>
           <section className="home">
             <AvatarContainer />
             <div className="goals__data-container ">
               <div className="goals__number-container">
-                <h2 className="goals__number">Goals</h2>
+                <h2 className="goals__number body medium">Goals</h2>
               </div>
               <GoalsApi />
             </div>
