@@ -15,7 +15,7 @@ const LandingPage = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const triggerPosition = 800; // Adjust this value based on when you want the transition to be activated
+      const triggerPosition = 600; // Adjust this value based on when you want the transition to be activated
       const timer = setTimeout(() => {
         setShowTitle(true);
       }, 600);
@@ -41,7 +41,7 @@ const LandingPage = () => {
       <main>
         <section className="hero">
           <div className="hero__header-container">
-            <h3 className="hero__header">Welcome!</h3>
+            <h1 className="hero__header">Welcome!</h1>
           </div>
           <div className="hero__container">
             <img className="hero__img" src={Blathers} />
@@ -51,7 +51,6 @@ const LandingPage = () => {
                   Struggling with forming healthy habits, self-love, and motivation? Chirp is here to help! Take care of your pet by taking care of
                   yourself!{" "}
                 </h2>
-                <h2 className="title__subheader">Complete quick self-care exercises to level up your pet and improve your mental health!</h2>
               </div>
             </article>
           </div>

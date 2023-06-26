@@ -1,9 +1,17 @@
-import React from "react";
+import {React, useState} from "react";
 import { Link, NavLink } from "react-router-dom";
 import Blathers from "../../assets/images/blathers.png";
 import "../../Components/Header/Header.scss";
 
 const NavBar = () => {
+      const [user, setUser] = useState(null);
+      const [failedAuth, setFailedAuth] = useState(false);
+    const handleLogout = () => {
+      sessionStorage.removeItem("token");
+      setUser(null);
+      setFailedAuth(true);
+    };
+
   return (
     <>
       <nav className="nav">
@@ -21,6 +29,11 @@ const NavBar = () => {
             <NavLink className="nav__link" to="/journal">
               Journal
             </NavLink>
+          </li>
+          <li className="nav__item">
+            <button className="nav__link" onClick={handleLogout}>
+              Log out
+            </button>
           </li>
         </ul>
       </nav>

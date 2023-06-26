@@ -1,79 +1,90 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.home {
-  padding: 2rem 1.5rem;
-  @include flex(flex-start, center, column);
-  gap: 4rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  @include tablet {
-    padding: 2rem 1.5rem;
-    @include flex(flex-start, center, row);
-    gap: 2rem;
-    width: 85%;
-  }
-  &__level-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  &__title {
-    @include flex(flex-start, center, column);
-  }
-  &__avatar-container {
-    width: 50%;
-    @include tablet {
-      width: 100%;
-    }
-  }
-  &__data-container {
-    // @include flex(space-between);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  &__data-card {
-    // box-shadow: $box-shadow;
-    background-color: white;
-    @include tablet {
-      padding: 1rem;
-      width: 90%;
-      height: 20vh;
-      border-radius: 20px;
-    }
-  }
-  //   &__number {
-  //     // @include font(2rem, 600);
-  //   }
-}
+// .home {
+//   padding: 2rem 1.5rem;
+//   @include flex(flex-start, center, column);
+//   gap: 4rem;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 2rem;
+//   @include tablet {
+//     padding: 2rem 1.5rem;
+//     @include flex(flex-start, center, row);
+//     gap: 2rem;
+//     width: 85%;
+//   }
+//   &__level-container {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 2rem;
+//   }
+//   &__title {
+//     @include flex(flex-start, center, column);
+//   }
+//   &__avatar-container {
+//     width: 50%;
+//     @include tablet {
+//       width: 100%;
+//     }
+//   }
+//   &__data-container {
+//     // @include flex(space-between);
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 2rem;
+//   }
+//   &__data-card {
+//     // box-shadow: $box-shadow;
+//     background-color: white;
+//     @include tablet {
+//       padding: 1rem;
+//       width: 90%;
+//       height: 20vh;
+//       border-radius: 20px;
+//     }
+//   }
+//   //   &__number {
+//   //     // @include font(2rem, 600);
+//   //   }
+// }
 
-.fa-heart {
-  color: red;
-}
-.card {
-  background-color: #d2d2d2;
-  height: 90%;
-  width: 100%;
+.level-container {
+  background-color: $peach;
+  border-radius: 20px;
+  padding: 2rem;
   &__one {
-    width: 40%;
-    @include tablet {
-      width: 100%;
-    }
+    margin-bottom: 1rem;
+    border-radius: 1.25rem;
+    background-image: url(../../assets/images/wood_texture.jpg);
+    padding: 2rem;
   }
-    &__two {
-    width: 40%;
-    @include tablet {
-      width: 100%;
-    }
-  }
-    &__three {
-    width: 40%;
-    @include tablet {
-      width: 100%;
-    }
+  &__text {
+    text-decoration: none;
   }
 }
+// .card {
+//   background-color: #d2d2d2;
+//   height: 90%;
+//   width: 100%;
+//   &__one {
+//     width: 40%;
+//     @include tablet {
+//       width: 100%;
+//     }
+//   }
+//   &__two {
+//     width: 40%;
+//     @include tablet {
+//       width: 100%;
+//     }
+//   }
+//   &__three {
+//     width: 40%;
+//     @include tablet {
+//       width: 100%;
+//     }
+//   }
+// }
