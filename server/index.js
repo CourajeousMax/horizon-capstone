@@ -8,11 +8,15 @@ const PORT = process.env.PORT;
 //importing all routes
 const usersRoute = require("./routes/usersRoute");
 const goalsRoute = require("./routes/goalsRoute");
+const journalsRoute = require("./routes/journalsRoute");
 const affirmationsRoute = require("./routes/affirmationsRoute");
+
 app.use(express.json());
 app.use(cors());
-app.use("/api", usersRoute, goalsRoute);
+
+app.use("/api", usersRoute, goalsRoute,journalsRoute);
 app.use("/", affirmationsRoute)
+
 app.get("/", (req, res) => {
   res.send("Welcome to Max server...");
 });
