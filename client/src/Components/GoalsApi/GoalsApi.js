@@ -30,7 +30,7 @@ const GoalsApi = () => {
                   </>
                 ) : (
                   <>
-                    <p>Complete</p>
+                    <p className="goals__data-button--text">Complete</p>
                     <FontAwesomeIcon
                       key={goal.id}
                       icon={faSeedling}

@@ -15,7 +15,7 @@ const LandingPage = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const triggerPosition = 600; // Adjust this value based on when you want the transition to be activated
+      const triggerPosition = 1050; // Adjust this value based on when you want the transition to be activated
       const timer = setTimeout(() => {
         setShowTitle(true);
       }, 600);

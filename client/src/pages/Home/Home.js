@@ -1,5 +1,5 @@
 import React from "react";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import NavBar from "../../Components/NavBar/NavBar";
@@ -12,8 +12,8 @@ import "./Home.scss";
 import "../SignUp/SignUp.scss";
 
 const Home = () => {
-    const [user, setUser] = useState(null);
-    const [failedAuth, setFailedAuth] = useState(false);
+  const [user, setUser] = useState(null);
+  const [failedAuth, setFailedAuth] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
       const token = sessionStorage.getItem("token");
@@ -66,11 +66,13 @@ const Home = () => {
 
   return (
     <>
-      <NavBar  />
+      <NavBar />
       <section className="cover">
         <div className="home__flex">
-          <div className="home__title-container">
-            <h1 className="home__title page-header">Welcome h o m e, {user.username}</h1>
+          <div className="home__title-container--block">
+            <div className="home__title-container">
+              <h1 className="home__title page-header">Welcome h o m e, {user.username}</h1>
+            </div>
           </div>
           <section className="home">
             <AvatarContainer />

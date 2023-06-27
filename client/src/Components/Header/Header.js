@@ -7,8 +7,10 @@ const Header = () => {
       <>
         <nav className="nav">
           <Link to="/">
+          <div className="nav__container">
             <img className="nav__logo" src={Blathers} alt="logo" />
-            <h1>CHIRP!</h1>
+            <h1 className="nav__text">CHIRP!</h1>
+          </div>
           </Link>
           <ul className="nav__list">
             <li className="nav__item">

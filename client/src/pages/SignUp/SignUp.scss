@@ -15,17 +15,38 @@
 .signup {
   min-height: calc(100vh - 7rem);
   padding-top: 5rem;
-
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+  &__page-header {
+    display: flex;
+    justify-content: center;
+  }
   &__form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 1.5rem;
     width: 24rem;
     margin: 0 auto;
     padding: 2rem;
     background-color: white;
     border-radius: 2.0156rem;
+    &-button {
+      border: none;
+      background-color: $sage;
+      border-radius: 1.25rem;
+      width: 50%;
+      height: 4vh;
+      color: $peach;
+      &:hover{
+        cursor: pointer;
+        background-color: $link;
+      }
+      &--text{
+        font-size: 1.2rem;
+      }
+    }
   }
 
   &__image {
