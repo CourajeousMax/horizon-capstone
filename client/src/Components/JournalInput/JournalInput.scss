@@ -2,53 +2,49 @@
 @use "../../styles/partials/variables" as *;
 
 .journal__container {
+  padding-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  &-block {
+    background-image: url(../../assets/images/download.jpg);
+    padding: 2rem;
+    width: 40%;
+    height: 40%;
+    border-radius: 1.25rem;
+  }
+  &-avatar {
+    width: 20%;
+  }
+  &-spotify {
+    width: 30%;
+  }
+  &-data {
+    @include flex(center, center, column);
+    flex-wrap: wrap;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    &-avatar{
-        width:20%
-    }
-    &-spotify{
-        width:30%
-    }
-    &-data{
-    width: 50vh;
     height: 50vh;
+    border-radius: 1.25rem;
     background-image: url(../../assets/images/camp.jpg);
-    }
+  }
+  &-text {
+    background-color: $white;
+  }
 }
 
-// .journal {
-//     min-height: calc(100vh - 7rem);
-//   &__box {
-//     width: 100%;
-//   }
-//   &__form {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     gap: 1.5rem;
-//     width: 24rem;
-//     margin: 0 auto;
-//     padding: 2rem;
-//     background-color: white;
-//     border-radius: 2.0156rem;
-//   }
-
-//   &__label {
-//     color: black;
-//     display: inline-block;
-//   }
-
-//   &__input {
-//     width: 100%;
-//     height: 2.5rem;
-//     padding: 1rem;
-//     box-sizing: border-box;
-//     border-radius: 0.4rem;
-
-//     &:focus {
-//       outline: none;
-//     }
-//   }
-// }
+.journal__reflection {
+  &-block {
+    background-color: $peach;
+    height: 13vh;
+    width: 13vw;
+    border-radius: 20px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  &-content {
+    display: flex;
+    align-items: center;
+  }
+}

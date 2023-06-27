@@ -37,9 +37,11 @@ const Login = () => {
             <FormInput label="Username:" name="username" type="text" />
             <FormInput label="Email:" name="email" type="email" />
             <FormInput label="Password:" name="password" type="password" />
-            <button>
-              Continue 
-            </button>
+            <div className="signup__container">
+              <button className="signup__form-button">
+                <p className="signup__form-button--text"> Continue</p>
+              </button>
+            </div>
           </form>
         </div>
       </section>

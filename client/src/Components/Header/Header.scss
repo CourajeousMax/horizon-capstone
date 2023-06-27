@@ -2,6 +2,10 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+a {
+  text-decoration: none;
+}
 .nav {
   padding: 1rem;
   background-color: $graphite;
@@ -12,6 +16,14 @@
     display: flex;
     justify-content: space-between;
   }
+  &__text{
+    color: $yellow;
+  }
+  &__container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
   &__logo {
     height: 2rem;
     display: block;
@@ -20,7 +32,7 @@
       height: 1.5rem;
     }
     @include desktop {
-      height: 2rem;
+      height: 5rem;
     }
   }
   &__list {

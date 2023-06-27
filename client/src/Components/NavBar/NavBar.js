@@ -16,8 +16,10 @@ const NavBar = () => {
     <>
       <nav className="nav">
         <Link to="/">
-          <img className="nav__logo" src={Blathers} alt="blathers logo" />
-          <h1>CHIRP!</h1>
+          <div className="nav__container">
+            <img className="nav__logo" src={Blathers} alt="logo" />
+            <h1 className="nav__text">CHIRP!</h1>
+          </div>
         </Link>
         <ul className="nav__list">
           <li className="nav__item">
@@ -29,11 +31,6 @@ const NavBar = () => {
             <NavLink className="nav__link" to="/journal">
               Journal
             </NavLink>
-          </li>
-          <li className="nav__item">
-            <button className="nav__link" onClick={handleLogout}>
-              Log out
-            </button>
           </li>
         </ul>
       </nav>

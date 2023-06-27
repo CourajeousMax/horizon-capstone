@@ -35,10 +35,14 @@ const SignUp = () => {
         <div className="signup">
           <form className="signup__form" onSubmit={handleSubmit}>
             <h2 className="signup__page-header">New user? Create an account!</h2>
-            <FormInput label="Username:" name="username" type="text"  />
-            <FormInput label="Email:" name="email" type="email"  />
-            <FormInput label="Password:" name="password" type="password"  />
-            <button>Register</button>
+            <FormInput label="Username:" name="username" type="text" />
+            <FormInput label="Email:" name="email" type="email" />
+            <FormInput label="Password:" name="password" type="password" />
+            <div className="signup__container">
+            <button className="signup__form-button">
+              <p className="signup__form-button--text">Register</p>
+            </button>
+            </div>
           </form>
         </div>
       </section>
