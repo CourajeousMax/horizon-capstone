@@ -9,6 +9,7 @@ const Journal = () => {
       <div>
         <NavBar />
         <JournalInput />
+        
       </div>
     );
 };

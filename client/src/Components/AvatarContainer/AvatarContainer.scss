@@ -65,6 +65,12 @@
     text-decoration: none;
   }
 }
+
+.home{
+  &__number-container{
+    background-color: $white;
+  }
+}
 // .card {
 //   background-color: #d2d2d2;
 //   height: 90%;

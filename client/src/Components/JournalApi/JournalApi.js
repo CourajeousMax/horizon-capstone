@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+import GoalsApi from "../../Components/GoalsApi/GoalsApi"
 
 const JournalApi = () => {
   const [journals, setJournals] = useState([]);

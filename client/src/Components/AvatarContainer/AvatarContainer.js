@@ -11,8 +11,15 @@ const AvatarContainer = ({}) => {
   const level = useMemo(() => {
     const goalsCount = goals.length;
     const count = goals.filter((goal) => goal.goal_completed === 1).length;
-    return goalsCount === count ? 1 : 0;
+    return count > 0 ? Math.floor((count / goalsCount) * 100) : 0;
   }, [goals]);
+
+  const currentLevel = Math.floor(level / 10) + 1;
+  // const level = useMemo(() => {
+  //   const goalsCount = goals.length;
+  //   const count = goals.filter((goal) => goal.goal_completed === 1).length;
+  //   return goalsCount === count ? 1 : 0;
+  // }, [goals]);
   const isLevelOne = level !== 0 ;
   return (
     <>
@@ -21,7 +28,7 @@ const AvatarContainer = ({}) => {
         {isLevelOne && (
           <div className="level-container__one">
           <div className="level-container">
-            <h2>Hooray!! You've reached level {level}!</h2>
+            <h2>Woohoo!! You've reached level {level}!</h2>
             <p className="level-container__text">Reflect on your thoughts:</p>
             <Link className="level-container__text" to="/journal"> How ya feeling? </Link>
           </div>
@@ -31,8 +38,10 @@ const AvatarContainer = ({}) => {
           <div className="home__data-card card">
             <GifEmbed />
             <div className="home__level-container">
+              <div className="home__number-container">
               <h3 className="home__number">Mango</h3>
-              {isLevelOne && <p>Mango is proud of you!! Keep up the good work!</p>}
+              </div>
+              {isLevelOne && <p>Baby Mango is proud of you!! Keep up the good work!</p>}
               <div className="home__data-card card__one">
                 <h3 className="home__number">Level {level}</h3>
                 <div className="hearts-container">
