@@ -10,11 +10,12 @@ const usersRoute = require("./routes/usersRoute");
 const goalsRoute = require("./routes/goalsRoute");
 const journalsRoute = require("./routes/journalsRoute");
 const affirmationsRoute = require("./routes/affirmationsRoute");
+const petsRoute = require("./routes/petsRoute");
 
 app.use(express.json());
 app.use(cors());
 
-app.use("/api", usersRoute, goalsRoute,journalsRoute);
+app.use("/api", usersRoute, goalsRoute,journalsRoute, petsRoute);
 app.use("/", affirmationsRoute)
 
 app.get("/", (req, res) => {
