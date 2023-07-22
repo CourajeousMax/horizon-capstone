@@ -9,20 +9,32 @@ a {
 .nav {
   padding: 1rem;
   background-color: $graphite;
-  height: 6rem;
+  height: 9.5rem;
   position: relative;
   @include tablet {
-    padding: 2rem 2rem 0;
     display: flex;
     justify-content: space-between;
+    padding: 2rem 2rem 0;
+    height: 4.5rem;
   }
-  &__text{
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 2rem 0;
+    height: 6rem;
+  }
+  &__text {
     color: $yellow;
   }
-  &__container{
+  &__container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
   }
   &__logo {
     height: 2rem;
@@ -45,7 +57,7 @@ a {
     width: 80%;
     @include tablet {
       margin-top: 0;
-      border-top: 3px; 
+      border-top: 3px;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -66,7 +78,7 @@ a {
     @include desktop {
       @include sub-header;
     }
-    &:hover{
+    &:hover {
       background-color: white;
       border-radius: 3rem;
     }

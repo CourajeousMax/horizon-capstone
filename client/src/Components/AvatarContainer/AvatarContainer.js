@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faSeedling } from "@fortawesome/free-solid-svg-icons";
 import GifEmbed from "../GifEmbed/GifEmbed";
 import { goalsState } from "../../store/goals";
+import  PetsApi  from "../../Components/PetsApi/PetsApi.js";
 import "../../Components/AvatarContainer/AvatarContainer.scss"
 const AvatarContainer = ({}) => {
   const [goals, setGoals] = useRecoilState(goalsState);
@@ -23,7 +24,7 @@ const AvatarContainer = ({}) => {
   const isLevelOne = level !== 0 ;
   return (
     <>
-      <div className="home__avatar-container-journal">
+      <div className="avatar__avatar-container-journal">
         {/* Render the container when level is 1 */}
         {isLevelOne && (
           <div className="level-container__one">
@@ -34,17 +35,17 @@ const AvatarContainer = ({}) => {
           </div>
           </div>
         )}
-        <div className="home__card-container">
-          <div className="home__data-card card">
+        <div className="avatar__card-container">
+          <div className="avatar__data-card card">
             <GifEmbed />
-            <div className="home__level-container">
-              <div className="home__number-container">
-              <h3 className="home__number">Mango</h3>
+            <div className="avatar__level-container">
+              <div className="avatar__number-container">
+              <PetsApi />
               </div>
               {isLevelOne && <p>Baby Mango is proud of you!! Keep up the good work!</p>}
-              <div className="home__data-card card__one">
-                <h3 className="home__number">Level {level}</h3>
-                <div className="hearts-container">
+              <div className="avatar__data-card card__one">
+                <h3 className="avatar__number">Level {level}</h3>
+                <div className="avatar__hearts-container">
                   {goals.map((goal, index) => (
                     <FontAwesomeIcon
                       key={goal.id}
@@ -57,9 +58,9 @@ const AvatarContainer = ({}) => {
                   ))}
                 </div>
               </div>
-              <div className="home__data-card card__three">
-                <h3 className="home__number">Energy Points:</h3>
-                <div className="seedling-continer">
+              <div className="avatar__data-card card__three">
+                <h3 className="avatar__number">Energy Points:</h3>
+                <div className="avatar__seedling-container">
                   {goals.map((goal, index) => (
                     <FontAwesomeIcon
                       key={goal.id}

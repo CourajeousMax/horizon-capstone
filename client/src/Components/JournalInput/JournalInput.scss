@@ -10,8 +10,8 @@
   &-block {
     background-image: url(../../assets/images/download.jpg);
     padding: 2rem;
-    width: 40%;
-    height: 40%;
+    width: 70%;
+    height: 60%;
     border-radius: 1.25rem;
   }
   &-avatar {
@@ -38,11 +38,14 @@
   &-block {
     background-color: $peach;
     height: 13vh;
-    width: 13vw;
+    width: 16vw;
     border-radius: 20px;
     padding: 1rem;
     display: flex;
     align-items: center;
+    @include tablet {
+      
+    }
   }
   &-content {
     display: flex;
