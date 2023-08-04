@@ -14,7 +14,7 @@ Create an account; Log in; Complete a set of goals list to level up your pet; Na
 # Tech Stack 
 Tech Stack Front-End: [REACT] [SASS] [AXIOS] [ WeatherApi]
 
-Tech Stack Front-End: [Node Js] [Express] [knex] [MySQL] [AffirmationsApi]
+Tech Stack Back-End: [Node.Js] [Express] [knex] [MySQL] [AffirmationsApi]
 
 # Next steps
 
