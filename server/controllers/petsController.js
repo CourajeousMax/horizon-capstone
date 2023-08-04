@@ -2,15 +2,15 @@ const db = require("../config/knexConnection");
 
 const createPet = async (req, res) => {
   try {
-    const { petName, species, age} = req.body;
+    const { pet_name, species, age } = req.body;
     // Create a new pet record in the pets table
-    const newPet = await db("pets").insert({ petName, species, age });
+    const newPet = await db("pets").insert({ pet_name, species, age });
 
     // Return the newly created pet
     res.status(201).json(newPet);
   } catch (error) {
     console.log(error);
-    res.status(500).send('Internal server error');
+    res.status(500).send("Internal server error");
   }
 };
 
@@ -20,15 +20,15 @@ const getPetById = async (req, res) => {
     const { id } = req.params;
     const pet = await db("pets").findById(id);
     if (!pet) {
-      return res.status(404).send('Pet not found');
+      return res.status(404).send("Pet not found");
     }
     res.json(pet);
   } catch (error) {
     console.log(error);
-    res.status(500).send('Internal server error');
+    res.status(500).send("Internal server error");
   }
 };
 module.exports = {
   createPet,
-  getPetById
+  getPetById,
 };
