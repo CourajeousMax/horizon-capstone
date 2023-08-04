@@ -15,6 +15,8 @@ Create an account; Log in; Complete a set of goals list to level up your pet; Na
 Tech Stack Front-End: [REACT] [SASS] [AXIOS] [ WeatherApi]
 
 Tech Stack Back-End: [Node.Js] [Express] [knex] [MySQL] [AffirmationsApi]
+## Demo
+![ezgif com-video-to-gif](https://github.com/CourajeousMax/horizon-capstone/assets/114710793/7a1dcead-79b8-4114-af59-dce2ad550bbb)
 
 # Next steps
 
