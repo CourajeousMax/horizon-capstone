@@ -1,69 +1,64 @@
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 import React from "react";
 
 const PetsApi = () => {
-  const [pets, setPets] = useState([]);
   const [petName, setPetName] = useState("");
+  const [editpetName, setEditPetName] = useState(false);
 
-  const handleInputChange = (event) => {
-    setPetName(event.target.value);
+  const handleInputChange = (e) => {
+    setPetName(e.target.value);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleEditClick = () => {
+    setEditPetName(true);
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setEditPetName(false);
+    setPetName("");
 
     try {
-      const response = await fetch("http://localhost:8000/api/pets", {
-        method: "POST",
+      const response = await fetch("http://localhost:8000/api/pets/:id", {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ petName }),
+        body: JSON.stringify({ name: petName }),
       });
 
-      if (response.ok) {
-        console.log("Pet name successfully updated");
-           setPets([...pets, petName]);
-
-      // Clear the input field after adding the pet name
-      setPetName("");
-
-      // Update the h3 element with the entered pet name
-      document.querySelector(".home__number").textContent = petName;
-      } else {
-        console.log("Failed to change pet name");
+      if (!response.ok) {
+        throw new Error("Failed to update pet name");
       }
+      const data = await response.json();
+      console.log(data);
     } catch (error) {
-      console.log(error);
+      console.error("Error:", error.message);
     }
   };
 
   useEffect(() => {
-    const fetchPets = async () => {
-      try {
-        const response = await fetch(`http://localhost:8000/api/pets`);
-        if (response.ok) {
-          const petsData = await response.json();
-          console.table(petsData);
-          setPets(petsData);
-        } else {
-          console.log("Can't get pet", response.status);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchPets();
+    fetch("http://localhost:8000/api/pets/:id")
+      .then((response) => response.json())
+      .then((data) => setPetName(data.name))
+      .catch((error) => console.error("Error:", error));
   }, []);
+
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={petName} onChange={handleInputChange} placeholder="Enter pet name" />
-        <button type="submit">Add Pet Name</button>
+      {/* <form onSubmit={handleFormSubmit}>
+        <input type="text" placeholder="Enter pet name" value={petName} onChange={handleInputChange} disabled={editpetName} />
       </form>
-      <h3 className="home__number">{petName}</h3>
+      <div>
+        <button type="submit">
+          <FontAwesomeIcon icon={faPen} onClick={handleEditClick} />
+        </button> */}
+        <h3 className="home__number">{petName} mango </h3>
+      {/* </div> */}
     </div>
   );
-  
 };
-  export default PetsApi;
+export default PetsApi;

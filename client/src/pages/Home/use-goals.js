@@ -24,7 +24,6 @@ export const useGoals = () => {
   }, []);
 
   const handleGoalClick = (goalId) => {
-    console.log(goalId);
     const goalIdx = goals.findIndex((g) => g.id === goalId);
     const _goals = [...goals];
     _goals[goalIdx] = { ..._goals[goalIdx], goal_completed: 1 };
